@@ -1,11 +1,11 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import App from './App';
+import React from 'react'
+import Helmet from 'react-helmet'
+import App from './App'
 
 class Html extends React.Component {
   render() {
-    const head = Helmet.rewind();
-    const devServerURL = !process.env.DEV ? '' : 'http://localhost:3001/build';
+    const head = Helmet.rewind()
+    const devServerURL = !process.env.DEV ? '' : 'http://localhost:3001/build'
 
     return (
       <html>
@@ -33,8 +33,8 @@ class Html extends React.Component {
           <script src={devServerURL + '/bundle.js'}></script>
         </body>
       </html>
-    );
+    )
   }
 }
 
-export default Html;
+export default Html
