@@ -1,8 +1,12 @@
 {
+  "parser": "babel-eslint",
   "extends": [
-    "rackt",
     "plugin:react/recommended"
   ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "rules": {
     "no-console": 0,
     "react/display-name": 0,
