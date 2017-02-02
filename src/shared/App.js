@@ -1,16 +1,25 @@
 import React from 'react'
-import { Match } from 'react-router'
+import { Switch, Route } from 'react-router-dom'
+import { Page } from 'hedron'
 
-import Menu from '../components/Menu'
-import Home from '../components/Home'
-import About from '../components/About'
+import Menu from 'shared/common/menu'
+import {
+  Home,
+  About,
+  NotFound
+} from 'shared/pages'
 
 function App() {
   return (
     <div className="app-container">
-      <Menu />
-      <Match exactly pattern="/" component={Home}/>
-      <Match exactly pattern="/about" component={About}/>
+      <Page fluid className="page">
+        <Menu />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/about' component={About} />
+          <Route component={NotFound} />
+        </Switch>
+      </Page>
     </div>
   )
 }

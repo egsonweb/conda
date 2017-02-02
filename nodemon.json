@@ -12,6 +12,8 @@
     "node_modules/**/node_modules"
   ],
   "watch": [
-    "src/server"
+    "src/server.js",
+    "src/middleware/*.js",
+    "src/routes/*.js"
   ]
 }

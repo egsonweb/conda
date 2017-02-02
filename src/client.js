@@ -1,11 +1,13 @@
 import 'isomorphic-fetch'
 import React from 'react'
 import { render } from 'react-dom'
-import { BrowserRouter } from 'react-router'
+import { BrowserRouter } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+
 import App from 'shared/App'
-import '../assets/styles/index.scss'
 
 const wrapper = document.getElementById('wrapper')
+const history = createBrowserHistory()
 
 if (process.env.NODE_ENV === 'development') {
   const { AppContainer } = require('react-hot-loader')

@@ -1,25 +1,25 @@
-const fs = require('fs');
-const path = require('path');
-const webpack = require('webpack');
-const sources = (location) => path.resolve(path.join(__dirname, '../src', location));
+const fs = require('fs')
+const path = require('path')
+const webpack = require('webpack')
+const sources = (location) => path.resolve(path.join(__dirname, '../src', location))
 
-const nodeModules = {};
+const nodeModules = {}
 fs.readdirSync('node_modules')
-.filter(function(x) {
-  return ['.bin'].indexOf(x) === -1;
+.filter(function (x) {
+  return [ '.bin' ].indexOf(x) === -1
 })
-.forEach(function(mod) {
-  nodeModules[mod] = 'commonjs ' + mod;
-});
+.forEach(function (mod) {
+  nodeModules[mod] = 'commonjs ' + mod
+})
 
 module.exports = {
   entry: [
     'babel-polyfill',
-    sources('server/index.js')
+    sources('server.js')
   ],
   target: 'node',
   output: {
-    path: path.join(__dirname, '../build'),
+    path: path.join(__dirname, '../dist'),
     filename: 'server.js'
   },
   externals: nodeModules,
@@ -27,17 +27,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            "es2015",
-            "stage-0",
-            "react"
-          ],
-          plugins: [
-            "transform-async-to-generator"
-          ]
-        }
+        loader: 'babel-loader'
       }
     ]
   },
@@ -65,4 +55,4 @@ module.exports = {
       warnings: false
     })
   ]
-};
+}
