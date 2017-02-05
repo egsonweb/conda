@@ -1,2 +1,2 @@
-# CRM
-Experimental CRM Tool
+# Conda
+Experimental dashboard application
