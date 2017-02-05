@@ -6,7 +6,7 @@ import {
   About,
   NotFound
 } from './components/pages'
-import './styles/global'
+import './themes/global'
 
 function App() {
   return (

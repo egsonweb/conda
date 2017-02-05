@@ -31,9 +31,9 @@ module.exports = {
   resolve: {
     extensions: [ '.js', '.jsx' ],
     modules: [
-			'node_modules',
-      sources(''),
-    ]
+			sources(''),
+			'node_modules'
+    ],
   },
   plugins: [
 		new webpack.DefinePlugin({
