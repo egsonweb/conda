@@ -27,32 +27,19 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+				options: {
+					presets: [
+						'babili'
+					]
+				}
       }
     ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true
-      },
-      compress: {
-        unused: true,
-        screw_ie8: true,
-        dead_code: true,
-        warnings: false
-      },
-      comments: false,
-      warnings: false
     })
   ]
 }

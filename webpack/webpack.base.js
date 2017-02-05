@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const sources = (location) => path.resolve(path.join(__dirname, '../src', location))
 
 module.exports = {
@@ -30,13 +31,14 @@ module.exports = {
   resolve: {
     extensions: [ '.js', '.jsx' ],
     modules: [
+			'node_modules',
       sources(''),
-      'node_modules'
-    ],
-    alias: {
-      'shared': sources('shared'),
-      'components': sources('components')
-    }
+    ]
   },
-  plugins: []
+  plugins: [
+		new webpack.DefinePlugin({
+			'process.env.DEV': JSON.stringify(process.env.DEV || false),
+			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+		})
+	]
 }

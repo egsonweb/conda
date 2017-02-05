@@ -7,7 +7,7 @@ const sources = (location) => path.resolve(path.join(__dirname, '../src', locati
 
 const prodConfig = merge(config, {
   cache: false,
-  devtool: 'source-map',
+  devtool: false,
   entry: {
     bundle: sources('client.js')
   },
@@ -21,13 +21,6 @@ prodConfig.plugins.push(
   new webpack.LoaderOptionsPlugin({
     minimize: true,
     debug: false
-  })
-)
-
-prodConfig.plugins.push(
-  new webpack.DefinePlugin({
-    'process.env.DEV': false,
-    'process.env.NODE_ENV': JSON.stringify('production')
   })
 )
 

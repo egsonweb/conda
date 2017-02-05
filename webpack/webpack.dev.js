@@ -27,11 +27,7 @@ const devConfig = merge(config, {
 devConfig.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.DEV': JSON.stringify(true),
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
+    new webpack.NamedModulesPlugin()
 )
 
 const compiler = webpack(devConfig)
