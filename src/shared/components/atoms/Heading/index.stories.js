@@ -17,6 +17,16 @@ storiesOf('Heading', module)
       Id tempor duis non esse commodo fugiat excepteur nostrud.
     </Heading>
   ))
+	.add('weight thin', () => (
+    <Heading weight="thin">
+      Id tempor duis non esse commodo fugiat excepteur nostrud.
+    </Heading>
+  ))
+	.add('weight bold', () => (
+    <Heading weight="bold">
+      Id tempor duis non esse commodo fugiat excepteur nostrud.
+    </Heading>
+  ))
   .add('level 2', () => (
     <Heading level={2}>Id tempor duis non esse commodo fugiat excepteur nostrud.</Heading>
   ))
