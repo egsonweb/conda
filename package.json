@@ -4,7 +4,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "lint": "eslint ./src",
-    "test": "jest",
+    "test": "npm run lint && jest",
     "coverage": "npm test -- --coverage",
     "dev": "cross-env NODE_ENV=development && DEV=true nodemon ./index.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
