@@ -32,9 +32,8 @@ const Image = ({...props, type}) => {
 		return <CircleImage {...props} />
 	} else if (props.type === 'thumbnail') {
 		return <ThumbnailImage {...props} />
-	} else {
-		return <BaseImage {...props} />
 	}
+	return <BaseImage {...props} />
 }
 
 Image.propTypes = {
