@@ -26,11 +26,11 @@ const ThumbnailImage = styled(RoundedImage)`
 `
 
 const Image = ({type, ...props}) => {
-	if (props.type === 'rounded') {
+	if (type === 'rounded') {
 		return <RoundedImage {...props} />
-	} else if (props.type === 'circle') {
+	} else if (type === 'circle') {
 		return <CircleImage {...props} />
-	} else if (props.type === 'thumbnail') {
+	} else if (type === 'thumbnail') {
 		return <ThumbnailImage {...props} />
 	}
 	return <BaseImage {...props} />
