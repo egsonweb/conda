@@ -25,7 +25,7 @@ const ThumbnailImage = styled(RoundedImage)`
 	display: inline-block;
 `
 
-const Image = ({...props, type}) => {
+const Image = ({type, ...props}) => {
 	if (props.type === 'rounded') {
 		return <RoundedImage {...props} />
 	} else if (props.type === 'circle') {
